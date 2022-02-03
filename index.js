@@ -3,13 +3,11 @@ import https from 'https';
 import fs from 'fs';
 import dotenv from 'dotenv';
 import dbConnection from './src/mongo/index';
-import getRedditService from './src/services/cronJob';
 dotenv.config();
 
 const cb = async () => {
   console.log(`Server Running on Port ${process.env.PORT}`);
   await dbConnection();
-  getRedditService.redditCron();
 };
 if (process.env.NODE_ENV === 'LOCALHOST') {
   https
