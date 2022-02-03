@@ -2,7 +2,7 @@ import app from './src/config/express';
 import https from 'https';
 import fs from 'fs';
 import dotenv from 'dotenv';
-import dbConnection from './src/postgres/index';
+import dbConnection from './src/mongo/index';
 import getRedditService from './src/services/cronJob';
 dotenv.config();
 
