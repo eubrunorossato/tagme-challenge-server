@@ -11,18 +11,6 @@ services:
       - 'db'
     networks:
       - webnet
-
-  db:
-    image: mongo:4.2.0-rc2-bionic
-    restart: always
-    volumes:
-      - './data:/data'
-    ports:
-      - '27017:27017'
-    expose:
-      - '27017'
-    networks:
-      - webnet
 networks:
   webnet:
     driver: bridge
