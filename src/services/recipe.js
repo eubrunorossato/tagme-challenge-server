@@ -3,4 +3,7 @@ export default {
   create: async body => {
     await recipeModel.create(body);
   },
+  getAll: async () => {
+    return await recipeModel.find();
+  },
 };

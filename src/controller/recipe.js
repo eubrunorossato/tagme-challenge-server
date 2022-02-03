@@ -10,4 +10,14 @@ export default {
       res.status(500).json(error.message);
     }
   },
+  getAll: async (req, res) => {
+    try {
+      const recipes = await recipeService.getAll();
+      res.status(201).json({
+        recipes,
+      });
+    } catch (error) {
+      res.status(500).json(error.message);
+    }
+  },
 };
