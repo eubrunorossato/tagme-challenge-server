@@ -4,7 +4,7 @@ const AutoIncrement = require('mongoose-sequence')(mongoose);
 const order = new Schema({
   recipe: [
     {
-      id: {
+      recipeId: {
         type: Schema.Types.ObjectId,
         ref: 'Recipe',
       },

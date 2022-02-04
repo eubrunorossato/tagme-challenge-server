@@ -4,6 +4,6 @@ export default {
     await orderModel.create(body);
   },
   getAll: async () => {
-    return await orderModel.find();
+    return await orderModel.find().populate('recipe.recipeId');
   },
 };
