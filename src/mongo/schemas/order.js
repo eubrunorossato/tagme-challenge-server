@@ -1,39 +1,26 @@
-import { Schema, model } from 'mongoose';
+import mongoose, { Schema, model } from 'mongoose';
+const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const order = new Schema({
-  name: {
-    type: Boolean,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: false,
-  },
-  ingredients: [
-    {
-      name: {
-        type: String,
-        required: true,
-      },
-      quatity: {
-        type: String,
-        required: true,
-      },
-    },
-  ],
-  steps: [
+  recipe: [
     {
       id: {
-        type: String,
-        required: true,
+        type: Schema.Types.ObjectId,
+        ref: 'Recipe',
       },
-      description: {
-        type: String,
-        required: false,
+      step: {
+        type: Number,
+        default: 0,
       },
     },
   ],
+  isDone: {
+    type: Boolean,
+    default: false,
+  },
 });
+
+order.plugin(AutoIncrement, { inc_field: 'number' });
 
 const Order = model('Order', order);
 
