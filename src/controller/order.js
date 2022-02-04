@@ -10,6 +10,17 @@ export default {
       res.status(500).json(error.message);
     }
   },
+  update: async (req, res) => {
+    try {
+      const order = await orderService.update(req.body);
+      res.status(200).json({
+        message: 'Pedido Atualizado',
+        order,
+      });
+    } catch (error) {
+      res.status(500).json(error.message);
+    }
+  },
   getAll: async (req, res) => {
     try {
       const orders = await orderService.getAll(req.body);
