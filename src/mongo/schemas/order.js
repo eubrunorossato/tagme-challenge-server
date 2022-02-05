@@ -14,9 +14,10 @@ const order = new Schema({
       },
     },
   ],
-  isDone: {
-    type: Boolean,
-    default: false,
+  status: {
+    type: String,
+    enum: ['1', '2', '3'],
+    default: '1',
   },
 });
 
