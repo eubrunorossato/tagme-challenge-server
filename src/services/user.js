@@ -1,4 +1,4 @@
-import userModel from '../mongo/schemas/user';
+import userModel from '../db/schemas/user';
 
 function formatAuthString(authString) {
   return authString.replace('Basic ', '');

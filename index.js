@@ -2,12 +2,12 @@ import app from './src/config/express';
 import https from 'https';
 import fs from 'fs';
 import dotenv from 'dotenv';
-import dbConnection from './src/mongo/index';
+import mongoConnection from './src/db/mongo';
 dotenv.config();
 
 const cb = async () => {
   console.log(`Server Running on Port ${process.env.PORT}`);
-  await dbConnection();
+  await mongoConnection();
 };
 if (process.env.NODE_ENV === 'LOCALHOST') {
   https

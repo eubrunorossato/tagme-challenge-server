@@ -1,4 +1,4 @@
-import orderModel from '../mongo/schemas/order';
+import orderModel from '../db/schemas/order';
 export default {
   create: async body => {
     await orderModel.create(body);

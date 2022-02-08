@@ -1,16 +1,10 @@
 version: '3.4'
 services:
-  backend:
-    build:
-      context: ./
-    volumes:
-      - './src:/app/src'
+  redis:
+    command: ['redis-server', '--bind', 'redis', '--port', '6379']
+    image: redis:6.0.4
     ports:
-      - '3000:3000'
-    depends_on:
-      - 'db'
-    networks:
-      - webnet
+      - '6379:6379'
 networks:
   webnet:
     driver: bridge
