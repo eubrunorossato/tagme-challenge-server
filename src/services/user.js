@@ -1,4 +1,5 @@
 import userModel from '../db/schemas/user';
+import redisService from '../services/redis';
 
 function formatAuthString(authString) {
   return authString.replace('Basic ', '');
@@ -25,6 +26,7 @@ export default {
     if (user === null || !user) {
       return false;
     }
+    await redisService.registerUser(user.user);
     return user.user;
   },
 };
