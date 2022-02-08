@@ -12,6 +12,7 @@ app.post('/create-order', orderController.create);
 app.put('/update-order', orderValidator.update, orderController.update);
 app.get('/recipe-get-all', recipeController.getAll);
 app.get('/order-get-all', orderController.getAll);
+app.get('/order-get-new', orderController.getNew);
 app.post('/user-auth', userController.authUser);
 app.post('/check-user', redisController.checkUser);
 

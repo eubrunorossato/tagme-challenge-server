@@ -16,4 +16,7 @@ export default {
   getAll: async () => {
     return await orderModel.find().populate('recipe.recipeId');
   },
+  getNew: async () => {
+    return await orderModel.count({ status: '1' });
+  },
 };

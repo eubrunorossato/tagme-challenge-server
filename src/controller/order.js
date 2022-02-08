@@ -31,4 +31,15 @@ export default {
       res.status(500).json(error.message);
     }
   },
+  getNew: async (req, res) => {
+    try {
+      const counter = await orderService.getNew();
+      console.log(counter);
+      res.status(200).json({
+        counter,
+      });
+    } catch (error) {
+      res.status(500).json(error.message);
+    }
+  },
 };
