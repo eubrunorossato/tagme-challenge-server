@@ -7,7 +7,7 @@ const recipe = new Schema({
   },
   description: {
     type: String,
-    required: false,
+    required: true,
   },
   ingredients: [
     {
@@ -29,7 +29,7 @@ const recipe = new Schema({
       },
       description: {
         type: String,
-        required: false,
+        required: true,
       },
     },
   ],
