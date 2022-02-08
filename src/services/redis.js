@@ -3,7 +3,8 @@ export default {
   registerUser: async user => {
     await redis.set(user, true, 'EX', 10);
   },
-  checkUser: async user => {
-    return await redis.get(user);
+  checkUser: async req => {
+    const { authorization } = req.headers;
+    return await redis.get(authorization);
   },
 };
