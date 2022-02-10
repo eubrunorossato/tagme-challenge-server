@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(morgan(':url :method'));
 app.use(
   cors({
-    origin: 'http://localhost:3001',
+    origin: `${process.env.FRONT_URL}`,
     optionsSuccessStatus: 200,
   })
 );
