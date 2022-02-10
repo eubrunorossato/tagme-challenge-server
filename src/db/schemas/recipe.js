@@ -25,6 +25,10 @@ const recipe = new Schema({
     type: String,
     required: true,
   },
+  timeToPrepare: {
+    type: String,
+    required: true,
+  },
   steps: [
     {
       id: {
