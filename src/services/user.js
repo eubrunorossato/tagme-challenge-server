@@ -19,6 +19,7 @@ export default {
     const base64Auth = formatAuthString(authorization);
     const stringAuth = Buffer.from(base64Auth, 'base64').toString();
     const userObject = splitStringAuth(stringAuth);
+    console.log(userObject);
     const user = await userModel.findOne({
       user: userObject.user,
       password: userObject.password,
