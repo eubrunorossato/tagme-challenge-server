@@ -6,4 +6,7 @@ export default {
   getAll: async () => {
     return await recipeModel.find();
   },
+  getById: async id => {
+    return await recipeModel.findById({ _id: id });
+  },
 };

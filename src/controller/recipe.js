@@ -7,7 +7,7 @@ export default {
         message: 'Receita Criada',
       });
     } catch (error) {
-      res.status(500).json(error.message);
+      res.status(500).json({ message: error.message });
     }
   },
   getAll: async (req, res) => {
@@ -17,7 +17,18 @@ export default {
         recipes,
       });
     } catch (error) {
-      res.status(500).json(error.message);
+      res.status(500).json({ message: error.message });
+    }
+  },
+  getById: async (req, res) => {
+    try {
+      const { id } = req.query;
+      const recipe = await recipeService.getById(id);
+      res.status(201).json({
+        recipe,
+      });
+    } catch (error) {
+      res.status(500).json({ message: error.message });
     }
   },
 };
