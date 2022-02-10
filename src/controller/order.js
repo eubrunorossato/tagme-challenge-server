@@ -34,7 +34,6 @@ export default {
   getNew: async (req, res) => {
     try {
       const counter = await orderService.getNew();
-      console.log(counter);
       res.status(200).json({
         counter,
       });

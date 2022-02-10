@@ -7,4 +7,8 @@ export default {
     const { authorization } = req.headers;
     return await redis.get(authorization);
   },
+  logout: async req => {
+    const { authorization } = req.headers;
+    return await redis.del(authorization);
+  },
 };
