@@ -13,7 +13,7 @@ export default {
   getAll: async (req, res) => {
     try {
       const recipes = await recipeService.getAll();
-      res.status(201).json({
+      res.status(200).json({
         recipes,
       });
     } catch (error) {
@@ -24,7 +24,7 @@ export default {
     try {
       const { id } = req.query;
       const recipe = await recipeService.getById(id);
-      res.status(201).json({
+      res.status(200).json({
         recipe,
       });
     } catch (error) {
